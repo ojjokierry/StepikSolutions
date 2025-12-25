@@ -4,7 +4,7 @@ INNER JOIN buy ON buy.buy_id = buy_book.buy_id
 INNER JOIN client ON client.client_id = buy.client_id 
 WHERE name_author IN ("Достоевский Ф.М.")
 GROUP BY name_client
-ORDER BY name_client
+ORDER BY name_client;
 
 
 
