@@ -6,7 +6,7 @@ INSERT INTO buy_book(buy_id, book_id, amount)
 SELECT "5", book_id, 1
 FROM book 
 WHERE title = "Белая гвардия";
-SELECT * FROM buy_book
+SELECT * FROM buy_book;
 
 
 
