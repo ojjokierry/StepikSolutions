@@ -1,0 +1,5 @@
+SELECT name_department, name_program, plan, ROUND(COUNT(enrollee_id), 2) AS Количество, ROUND(COUNT(enrollee_id)/plan, 2) AS Конкурс
+FROM program_enrollee INNER JOIN program USING (program_id)
+INNER JOIN department USING (department_id)
+GROUP BY name_department, name_program, plan
+ORDER BY 5 DESC
