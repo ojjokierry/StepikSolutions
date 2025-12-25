@@ -1,0 +1,17 @@
+SELECT YEAR(date_step_beg) AS Год, MONTHNAME(date_step_beg) AS Месяц, SUM(price*buy_book.amount) AS Сумма
+FROM book INNER JOIN buy_book ON book.book_id = buy_book.book_id 
+INNER JOIN buy_step ON buy_step.buy_id = buy_book.buy_id 
+INNER JOIN step ON buy_step.step_id = step.step_id
+WHERE date_step_end IS NOT NULL AND name_step IN ("Оплата")
+GROUP BY 1, 2 
+UNION 
+SELECT YEAR(date_payment) AS Год, MONTHNAME(date_payment) AS Месяц, SUM(price*amount) AS Сумма
+FROM buy_archive
+WHERE date_payment IS NOT NULL
+GROUP BY 1, 2
+ORDER BY 2 ASC, 1 ASC
+
+
+
+
+
