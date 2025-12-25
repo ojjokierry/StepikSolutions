@@ -1,0 +1,12 @@
+UPDATE buy_step INNER JOIN step USING (step_id)
+SET date_step_end = IF(name_step = "Оплата", "2020.04.13", date_step_end)
+WHERE buy_id = 5;
+UPDATE buy_step INNER JOIN step USING (step_id)
+SET date_step_beg = "2020.04.13"
+WHERE step_id = (SELECT step_id + 1 FROM step WHERE name_step = "Оплата") AND buy_id = 5;
+SELECT * FROM buy_step;
+
+
+
+
+
