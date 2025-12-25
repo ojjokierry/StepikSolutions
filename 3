@@ -1,0 +1,9 @@
+SELECT name_subject, ROUND(COUNT(enrollee_id), 1) AS Количество, ROUND(MAX(result), 1) AS Максимум,
+ROUND(MIN(result), 1) AS Минимум, ROUND(AVG(result), 1) AS Среднее
+FROM subject INNER JOIN enrollee_subject USING (subject_id)
+GROUP BY name_subject
+ORDER BY name_subject
+
+
+
+
