@@ -2,7 +2,7 @@ SELECT buy_step.buy_id, DATEDIFF(date_step_end, date_step_beg) AS Количес
 FROM city INNER JOIN client ON city.city_id = client.city_id
 INNER JOIN buy ON buy.client_id = client.client_id
 INNER JOIN buy_step ON buy_step.buy_id = buy.buy_id
-WHERE buy_step.step_id LIKE "%3%" AND date_step_end IS NOT NULL
+WHERE buy_step.step_id LIKE "%3%" AND date_step_end IS NOT NULL;
 
 
 
