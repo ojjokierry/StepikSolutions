@@ -1,0 +1,19 @@
+SELECT title, SUM(s.C) AS Количество, SUM(s.A) AS Сумма
+FROM (SELECT title, SUM(buy_book.amount) AS C, SUM(book.price*buy_book.amount) AS A
+FROM book INNER JOIN buy_book ON book.book_id = buy_book.book_id 
+INNER JOIN buy_step ON buy_step.buy_id = buy_book.buy_id 
+INNER JOIN step ON buy_step.step_id = step.step_id 
+WHERE date_step_end IS NOT NULL AND name_step IN ('Оплата')
+GROUP BY title
+UNION
+SELECT title, SUM(buy_archive.amount) AS C, SUM(buy_archive.price*buy_archive.amount) AS A
+FROM buy_archive INNER JOIN book ON buy_archive.book_id = book.book_id
+     GROUP BY title) AS s 
+GROUP BY title 
+ORDER BY 3 DESC
+
+
+
+
+
+
