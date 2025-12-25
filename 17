@@ -3,7 +3,6 @@ SELECT buy_id, SUM(buy_book.amount) AS Количество, SUM(price*buy_book.
 FROM book INNER JOIN buy_book USING (book_id)
 WHERE buy_id = 5
 GROUP BY buy_id;
-SELECT * FROM buy_pay
 
 
 
