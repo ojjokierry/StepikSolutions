@@ -4,7 +4,7 @@ FROM book INNER JOIN buy_book USING (book_id)
      INNER JOIN author USING (author_id)
 WHERE buy_id = 5
 ORDER BY title;
-SELECT * FROM buy_pay
+
 
 
 
