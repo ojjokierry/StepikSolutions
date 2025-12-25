@@ -1,0 +1,9 @@
+SELECT buy.buy_id, name_client, SUM(price*buy_book.amount) AS Стоимость 
+FROM buy_book INNER JOIN book ON buy_book.book_id = book.book_id
+INNER JOIN buy ON buy_book.buy_id = buy.buy_id
+INNER JOIN client ON client.client_id = buy.client_id
+GROUP BY buy.buy_id, name_client
+ORDER BY buy.buy_id
+
+
+
