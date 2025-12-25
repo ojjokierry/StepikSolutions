@@ -2,7 +2,7 @@ SELECT city.name_city, COUNT(buy.buy_id) AS Количество
 FROM city INNER JOIN client ON city.city_id = client.city_id
 INNER JOIN buy ON buy.client_id = client.client_id
 GROUP BY name_city
-ORDER BY name_city
+ORDER BY name_city;
 
 
 
