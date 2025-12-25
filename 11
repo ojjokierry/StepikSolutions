@@ -10,7 +10,7 @@ SELECT title, SUM(buy_archive.amount) AS C, SUM(buy_archive.price*buy_archive.am
 FROM buy_archive INNER JOIN book ON buy_archive.book_id = book.book_id
      GROUP BY title) AS s 
 GROUP BY title 
-ORDER BY 3 DESC
+ORDER BY 3 DESC;
 
 
 
