@@ -9,7 +9,7 @@ SELECT YEAR(date_payment) AS Год, MONTHNAME(date_payment) AS Месяц, SUM(
 FROM buy_archive
 WHERE date_payment IS NOT NULL
 GROUP BY 1, 2
-ORDER BY 2 ASC, 1 ASC
+ORDER BY 2 ASC, 1 ASC;
 
 
 
