@@ -5,7 +5,7 @@ GROUP by name_genre
 HAVING SUM(buy_book.amount) IN (SELECT MAX(summa) AS max_summa FROM 
                                (SELECT book.genre_id, SUM(buy_book.amount) AS summa 
                                 FROM book INNER JOIN buy_book ON book.book_id = buy_book.book_id 
-                                GROUP BY book.genre_id) s)
+                                GROUP BY book.genre_id) s);
 
 
 
