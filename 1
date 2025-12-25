@@ -3,4 +3,4 @@ FROM client INNER JOIN buy ON buy.client_id = client.client_id
 INNER JOIN buy_book ON buy.buy_id = buy_book.buy_id
 INNER JOIN book ON book.book_id = buy_book.book_id
 WHERE name_client LIKE "%Баранов Павел%"
-ORDER BY buy_id, title
+ORDER BY buy_id, title;
